@@ -39,6 +39,13 @@ app.use(
 );
 
 // 👉 Replace this with auth middleware 👈
+app.use(
+   auth({
+      secret: SESSION_SECRET,
+      auth0Logout: true,
+      baseURL: APP_URL,
+   })
+);
 
 
 const expenses = [
